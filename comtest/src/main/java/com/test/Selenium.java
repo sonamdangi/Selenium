@@ -1,15 +1,12 @@
 package com.test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Selenium {
 
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","/var/lib/jenkins/chromedriver"); // <-- Change this path
-        ChromeOptions chromeOptions = new ChromeOptions();
         WebDriver driver = new ChromeDriver();
-        ChromeOptions.addArguments("--headless");
         String baseUrl = "https://experitest.com/free-trial/";
         String expectedTitle = "Free trial";
         String actualTitle = "";
