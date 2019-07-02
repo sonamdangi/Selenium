@@ -7,6 +7,7 @@ public class Selenium {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","/var/lib/jenkins/chromedriver"); // <-- Change this path
         WebDriver driver = new ChromeDriver();
+        options.addArguments("--headless");
         String baseUrl = "https://experitest.com/free-trial/";
         String expectedTitle = "Free trial";
         String actualTitle = "";
