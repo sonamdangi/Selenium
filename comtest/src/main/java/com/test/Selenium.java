@@ -4,21 +4,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Selenium {
 
-    public static void main(String[] args) {
+  @Test
+		public void Check()
+        {
         System.setProperty("webdriver.chrome.driver","/var/lib/jenkins/chromedriver"); // <-- Change this path
         final ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setBinary("/var/lib/jenkins/chromedriver");
-        chromeOptions.addArguments("--headless");
-        String baseUrl = "https://experitest.com/free-trial/";
-        String expectedTitle = "Free trial";
-        String actualTitle = "";
-        driver.get(baseUrl);
-        actualTitle = driver.getTitle();
-        if (actualTitle.contentEquals(expectedTitle)){
-            System.out.println("TEST PASSED!");
-        } else {
-            System.out.println("TEST FAILED");
-        }
-        driver.close();
+	        //chromeOptions.setBinary("/var/lib/jenkins/chromedriver");
+	       chromeOptions.addArguments("--headless"); 
+	        WebDriver driver = new ChromeDriver(chromeOptions);
+	      
+	        String baseUrl = "https://experitest.com/free-trial/";
+	        String expectedTitle = "Free trial";
+	        String actualTitle = "";
+	        driver.get(baseUrl);
+	        actualTitle = driver.getTitle();
+	        Assert.assertEquals(expectedTitle, actualTitle);
+	      
+	        driver.close();
     }
 }
