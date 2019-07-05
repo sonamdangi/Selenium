@@ -9,7 +9,7 @@ public class Selenium {
         {
         System.setProperty("webdriver.chrome.driver","/var/lib/jenkins/chromedriver"); // <-- Change this path
         final ChromeOptions chromeOptions = new ChromeOptions();
-	        //chromeOptions.setBinary("/var/lib/jenkins/chromedriver");
+	        chromeOptions.setBinary("/var/lib/jenkins/chromedriver");
 	       chromeOptions.addArguments("--headless"); 
 	        WebDriver driver = new ChromeDriver(chromeOptions);
 	      
