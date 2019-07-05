@@ -7,7 +7,7 @@ public class Selenium {
   @Test
 		public void Check()
         {
-        System.setProperty("webdriver.chrome.driver","/var/lib/jenkins/chromedriver"); // <-- Change this path
+       System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver.exe");
         final ChromeOptions chromeOptions = new ChromeOptions();
 	        chromeOptions.setBinary("/var/lib/jenkins/chromedriver");
 	       chromeOptions.addArguments("--headless"); 
